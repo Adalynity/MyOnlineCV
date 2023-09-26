@@ -1,4 +1,5 @@
 @import url('../assets/worksans.ttf');
+
 :root{
     --background: rgba(85, 214, 170, .85)
 }
@@ -21,6 +22,7 @@ body{
     background-size: cover;
     display: grid;
     place-items: center;
+    color: white;
 }
 
 header {
@@ -30,6 +32,40 @@ header {
     z-index: 999;
     width: 100%;
 }
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after{
+    content: '';
+    position: absolute;
+
+}
+
+.nav-toggle-label span::before{
+    bottom: 7px;
+}
+.nav-toggle-label span::after{
+    top: 7px;
+}
 
 nav{
     position: absolute;
@@ -38,7 +74,9 @@ nav{
     left: 0;
     background: var(--background);
     width: 100%;
-    display: none;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
 }
 
 nav ul{
@@ -56,13 +94,26 @@ nav a{
     text-decoration: none;
     font-size: 1.2rem;
     text-transform: uppercase;
-
+    opacity: 0;
+    transform: opacity 150ms ease-in-out;
 }
 
 nav a:hover {
     color: #000;
+    
 }
 
 .nav-toggle:checked ~ nav {
     display: block;
+}
+.nav-toggle{
+    display: none;
+}
+.nav-toggle:checked ~ nav{
+    transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a{
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
 }

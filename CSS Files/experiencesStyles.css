@@ -123,3 +123,12 @@ nav a:hover {
     position: absolute;
     top: 100px;
 }
+.supportDeskIntro{
+    margin-bottom: 1300px;
+    text-align: center;
+}
+.date{
+    color: lightgray;
+    opacity: 40%;
+    text-align: center;
+}

@@ -119,11 +119,14 @@ nav a:hover {
 }
 
 .profile{
+    transition: transform .2s;
     position: absolute;
     justify-content: center;
     scale: 30%;
-    border-radius: 70%;
-    top: -430px;
+    top: -390px;
+}
+.profile:hover{
+   transform:scale(1.5);
 }
 .mainText{
     text-align: center;

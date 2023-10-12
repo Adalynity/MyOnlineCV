@@ -8,6 +8,7 @@
     box-sizing: border-box;
 }
 body{
+    text-align: center;
     margin: 0;
     background: #222;
     font-family: 'Work Sans', sans-serif;
@@ -15,6 +16,7 @@ body{
 }
 
 .content{
+    
     height: 200vh;
     background-color: #333;
     background-blend-mode: multiply;
@@ -120,13 +122,22 @@ nav a:hover {
 
 
 .mainText{
-    position: absolute;
-    top: 100px;
+    scroll-snap-type: mandatory;
+    position: relative;
+    top: -250px;
+    
+}
+.scroller{
+    scroll-snap-type: y mandatory;
+}
+.scroller section{
+    scroll-snap-align: start;
 }
 .supportDeskIntro{
-    margin-bottom: 1300px;
-    text-align: center;
+    position: relative;
+    
 }
+
 .date{
     color: lightgray;
     opacity: 40%;
